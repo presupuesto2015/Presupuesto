@@ -26,3 +26,4 @@ class Usuario {
         version false
     }
 }
+//Informacion Basica sobre usuarios del sistema
