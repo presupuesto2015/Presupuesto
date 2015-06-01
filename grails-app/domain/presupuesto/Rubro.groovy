@@ -21,3 +21,4 @@ class Rubro {
         version false
     }
 }
+//Dominio Rubros
