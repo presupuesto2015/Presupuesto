@@ -1,0 +1,229 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x58b2ca8c, pid=1540, tid=2012
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_45-b18) (build 1.7.0_45-b18)
+# Java VM: Java HotSpot(TM) Server VM (24.45-b08 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x30ca8c]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x483e4c00):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=2012, stack(0x48690000,0x486e0000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x588fd604
+
+Registers:
+EAX=0x588fd604, EBX=0x86c75f0b, ECX=0x86c75f0b, EDX=0x00000000
+ESP=0x486de14c, EBP=0x486de184, ESI=0x00000001, EDI=0x4b8c0098
+EIP=0x58b2ca8c, EFLAGS=0x00010282
+
+Top of Stack: (sp=0x486de14c)
+0x486de14c:   00000000 486de968 483b0f90 00000000
+0x486de15c:   0000199e 00000005 4a900180 0000001a
+0x486de16c:   48b86458 0000005c 4b971028 486de238
+0x486de17c:   00131000 00003d00 486de29c 58b0524e
+0x486de18c:   58c2c144 486dee98 00000000 58c89bec
+0x486de19c:   0000000c 486dee98 486de968 00000003
+0x486de1ac:   4a67f858 75390de2 00000084 00000000
+0x486de1bc:   486de1d8 589dc6b3 00000084 588a2278 
+
+Instructions: (pc=0x58b2ca8c)
+0x58b2ca6c:   e8 cf 38 00 00 8b d3 8b cb c1 ea 05 83 e1 1f 83
+0x58b2ca7c:   e2 07 be 01 00 00 00 d3 e6 8b 0c 90 8b d9 0b de
+0x58b2ca8c:   89 1c 90 8b 5d fc 85 ce 0f 85 66 ff ff ff ff 07
+0x58b2ca9c:   e9 5f ff ff ff 83 45 f8 50 43 89 5d fc 3b 59 14 
+
+
+Register to memory mapping:
+
+EAX=0x588fd604 is an unknown value
+EBX=0x86c75f0b is an unknown value
+ECX=0x86c75f0b is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0x486de14c is pointing into the stack for thread: 0x483e4c00
+EBP=0x486de184 is pointing into the stack for thread: 0x483e4c00
+ESI=0x00000001 is an unknown value
+EDI=0x4b8c0098 is an unknown value
+
+
+Stack: [0x48690000,0x486e0000],  sp=0x486de14c,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x30ca8c]
+V  [jvm.dll+0x2e524e]
+V  [jvm.dll+0x2ed680]
+V  [jvm.dll+0x2eeb22]
+V  [jvm.dll+0x2d9ed9]
+V  [jvm.dll+0x69ab9]
+V  [jvm.dll+0x6a0bd]
+V  [jvm.dll+0x17540c]
+V  [jvm.dll+0x175537]
+V  [jvm.dll+0x1b9329]
+C  [msvcr100.dll+0x5c556]
+C  [msvcr100.dll+0x5c600]
+C  [kernel32.dll+0x1338a]
+C  [ntdll.dll+0x39f72]
+C  [ntdll.dll+0x39f45]
+
+
+Current CompileTask:
+C2:   1279   18             sl.org.objectweb.asm.ClassReader::accept (5521 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x483e2c00 JavaThread "Service Thread" daemon [_thread_blocked, id=1028, stack(0x48750000,0x487a0000)]
+  0x483e2000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=5392, stack(0x48810000,0x48860000)]
+=>0x483e4c00 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=2012, stack(0x48690000,0x486e0000)]
+  0x483b3c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=5948, stack(0x484d0000,0x48520000)]
+  0x483ab400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3804, stack(0x45ac0000,0x45b10000)]
+  0x4837c800 JavaThread "Finalizer" daemon [_thread_blocked, id=460, stack(0x48480000,0x484d0000)]
+  0x48377000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5956, stack(0x481c0000,0x48210000)]
+  0x0231d800 JavaThread "main" [_thread_blocked, id=5992, stack(0x00290000,0x002e0000)]
+
+Other Threads:
+  0x48376400 VMThread [stack: 0x459b0000,0x45a00000] [id=3960]
+  0x483dcc00 WatcherThread [stack: 0x488a0000,0x488f0000] [id=5920]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0231bd28] Threads_lock - owner thread: 0x48376400
+[0x0231c138] Heap_lock - owner thread: 0x0231d800
+
+Heap
+ PSYoungGen      total 19456K, used 16896K [0x35500000, 0x36a80000, 0x45500000)
+  eden space 16896K, 100% used [0x35500000,0x36580000,0x36580000)
+  from space 2560K, 0% used [0x36800000,0x36800000,0x36a80000)
+  to   space 2560K, 38% used [0x36580000,0x36676aa0,0x36800000)
+ ParOldGen       total 43776K, used 0K [0x15500000, 0x17fc0000, 0x35500000)
+  object space 43776K, 0% used [0x15500000,0x15500000,0x17fc0000)
+ PSPermGen       total 32768K, used 3443K [0x05500000, 0x07500000, 0x15500000)
+  object space 32768K, 10% used [0x05500000,0x0585cf78,0x07500000)
+
+Card table byte_map: [0x45500000,0x45710000] byte_map_base: 0x454d5800
+
+Polling page: 0x00120000
+
+Code Cache  [0x02420000, 0x02660000, 0x05420000)
+ total_blobs=164 nmethods=47 adapters=72 free_code_cache=48782Kb largest_free_block=49936448
+
+Compilation events (10 events):
+Event: 0.542 Thread 0x483e2000 nmethod 44 0x0247cf08 code [0x0247d080, 0x0247d678]
+Event: 0.542 Thread 0x483e2000   45             sl.org.objectweb.asm.MethodAdapter::visitVarInsn (12 bytes)
+Event: 0.551 Thread 0x483e2000 nmethod 45 0x0247a508 code [0x0247a680, 0x0247abb8]
+Event: 0.551 Thread 0x483e2000   46             sl.org.objectweb.asm.MethodWriter::visitVarInsn (281 bytes)
+Event: 0.559 Thread 0x483e2000 nmethod 46 0x0247dec8 code [0x0247e040, 0x0247e558]
+Event: 0.559 Thread 0x483e2000   47             java.util.Collections$EmptyList::isEmpty (2 bytes)
+Event: 0.559 Thread 0x483e2000 nmethod 47 0x02478708 code [0x02478800, 0x02478850]
+Event: 0.559 Thread 0x483e2000   48             sl.org.objectweb.asm.MethodWriter::visitLabel (281 bytes)
+Event: 0.573 Thread 0x483e2000 nmethod 48 0x0247c308 code [0x0247c420, 0x0247ca7c]
+Event: 0.573 Thread 0x483e2000   49             sl.org.objectweb.asm.MethodWriter::visitMaxs (1108 bytes)
+
+GC Heap History (1 events):
+Event: 0.587 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 19456K, used 16896K [0x35500000, 0x36a80000, 0x45500000)
+  eden space 16896K, 100% used [0x35500000,0x36580000,0x36580000)
+  from space 2560K, 0% used [0x36800000,0x36800000,0x36a80000)
+  to   space 2560K, 0% used [0x36580000,0x36580000,0x36800000)
+ ParOldGen       total 43776K, used 0K [0x15500000, 0x17fc0000, 0x35500000)
+  object space 43776K, 0% used [0x15500000,0x15500000,0x17fc0000)
+ PSPermGen       total 32768K, used 3443K [0x05500000, 0x07500000, 0x15500000)
+  object space 32768K, 10% used [0x05500000,0x0585cf78,0x07500000)
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.177 Thread 0x0231d800 Threw 0x35744a88 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.185 Thread 0x0231d800 Threw 0x35759778 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.215 Thread 0x0231d800 Threw 0x3583b820 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.216 Thread 0x0231d800 Threw 0x358429c0 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.237 Thread 0x0231d800 Threw 0x358a45c8 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.239 Thread 0x0231d800 Threw 0x358df720 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.292 Thread 0x0231d800 Threw 0x35a79830 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.458 Thread 0x0231d800 Threw 0x3603ff88 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.521 Thread 0x0231d800 Threw 0x36287af0 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.521 Thread 0x0231d800 Threw 0x3628c998 at C:\re\jdk7u45\229\hotspot\src\share\vm\prims\jvm.cpp:1244
+
+Events (10 events):
+Event: 0.475 loading class 0x00765a10 done
+Event: 0.475 loading class 0x00765860
+Event: 0.475 loading class 0x00765860 done
+Event: 0.476 loading class 0x007925b8
+Event: 0.476 loading class 0x007925b8 done
+Event: 0.521 loading class 0x489284a0
+Event: 0.521 loading class 0x489284a0 done
+Event: 0.521 loading class 0x4891c0d0
+Event: 0.521 loading class 0x4891c0d0 done
+Event: 0.587 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+0x00880000 - 0x008af000 	C:\Program Files (x86)\Java\jdk1.7.0_45\bin\java.exe
+0x76ff0000 - 0x77170000 	C:\Windows\SysWOW64\ntdll.dll
+0x754f0000 - 0x75600000 	C:\Windows\syswow64\kernel32.dll
+0x75380000 - 0x753c7000 	C:\Windows\syswow64\KERNELBASE.dll
+0x75410000 - 0x754b0000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75020000 - 0x750cc000 	C:\Windows\syswow64\msvcrt.dll
+0x75220000 - 0x75239000 	C:\Windows\SysWOW64\sechost.dll
+0x74f30000 - 0x75020000 	C:\Windows\syswow64\RPCRT4.dll
+0x74990000 - 0x749f0000 	C:\Windows\syswow64\SspiCli.dll
+0x74980000 - 0x7498c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x768f0000 - 0x769f0000 	C:\Windows\syswow64\USER32.dll
+0x75a70000 - 0x75b00000 	C:\Windows\syswow64\GDI32.dll
+0x754e0000 - 0x754ea000 	C:\Windows\syswow64\LPK.dll
+0x74e90000 - 0x74f2d000 	C:\Windows\syswow64\USP10.dll
+0x6f5f0000 - 0x6f78e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x74c50000 - 0x74ca7000 	C:\Windows\syswow64\SHLWAPI.dll
+0x756e0000 - 0x75740000 	C:\Windows\system32\IMM32.DLL
+0x75600000 - 0x756cc000 	C:\Windows\syswow64\MSCTF.dll
+0x6fe40000 - 0x6feff000 	C:\Program Files (x86)\Java\jdk1.7.0_45\jre\bin\msvcr100.dll
+0x58820000 - 0x58dc9000 	C:\Program Files (x86)\Java\jdk1.7.0_45\jre\bin\server\jvm.dll
+0x74550000 - 0x74557000 	C:\Windows\system32\WSOCK32.dll
+0x75a20000 - 0x75a55000 	C:\Windows\syswow64\WS2_32.dll
+0x75400000 - 0x75406000 	C:\Windows\syswow64\NSI.dll
+0x6f120000 - 0x6f152000 	C:\Windows\system32\WINMM.dll
+0x75a60000 - 0x75a65000 	C:\Windows\syswow64\PSAPI.DLL
+0x70f10000 - 0x70f1c000 	C:\Program Files (x86)\Java\jdk1.7.0_45\jre\bin\verify.dll
+0x70030000 - 0x70050000 	C:\Program Files (x86)\Java\jdk1.7.0_45\jre\bin\java.dll
+0x684b0000 - 0x684d0000 	C:\Program Files (x86)\Java\jdk1.7.0_45\jre\bin\instrument.dll
+0x700a0000 - 0x700b3000 	C:\Program Files (x86)\Java\jdk1.7.0_45\jre\bin\zip.dll
+0x6ebb0000 - 0x6ec9b000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Xmx768M -Xms64M -XX:PermSize=32m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8 -Dserver.port=8080 -Djline.WindowsTerminal.directConsole=false -javaagent:C:/grails-2.3.2/lib/org.springsource.springloaded/springloaded-core/jars/springloaded-core-1.1.4.jar -Xverify:none -Dspringloaded=""profile=grails;cacheDir=C:\Users\FABIAN/.grails/2.3.2/" -Dprogram.name= -Dgrails.home=C:\grails-2.3.2 -Dgrails.version=2.3.2 -Dbase.dir=. -Dtools.jar=C:\Program Files (x86)\Java\jdk1.7.0_45\lib\tools.jar -Dgroovy.starter.conf=C:\grails-2.3.2\conf\groovy-starter.conf 
+java_command: org.codehaus.groovy.grails.cli.support.GrailsStarter --main org.codehaus.groovy.grails.cli.support.GrailsStarter --conf C:\grails-2.3.2\conf\groovy-starter.conf --classpath   run-app
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files (x86)\Java\jdk1.7.0_45
+PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\x64\;C:\Program Files (x86)\nodejs\;C:\Users\FABIAN\AppData\Roaming\npm
+USERNAME=FABIAN
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 21 Model 1 Stepping 2, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 21 model 1 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8286248k(3640512k free), swap 16570632k(11184528k free)
+
+vm_info: Java HotSpot(TM) Server VM (24.45-b08) for windows-x86 JRE (1.7.0_45-b18), built on Oct  8 2013 05:56:58 by "java_re" with unknown MS VC++:1600
+
+time: Sat May 02 01:53:12 2015
+elapsed time: 1 seconds
+
